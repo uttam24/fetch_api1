@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+import React,{useState, useEffect} from 'react';
 import './App.css';
 
-function App() {
+const App =()=> {
+  const[items, setItems] = useState([]);
+  const getUsers = async () =>{
+    const responce = await fetch('https://cat-fact.herokuapp.com/facts');
+    setItems(await responce.json());
+    //console.log(responce);
+  }
+
+  useEffect(()=>{
+    getUsers();
+  },[])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="conatainer">
+          {items.map((item)=>{
+          return(
+            <div className='card'>
+             <p>{item.type}</p>
+            <p>{item._id}</p>
+             
+              <p>{item.user}</p>
+            </div>
+            )
+         })}
+       </div>
     </div>
   );
 }
