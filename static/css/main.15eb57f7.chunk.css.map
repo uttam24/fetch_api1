@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/App.css"],"names":[],"mappings":"AAAA,MAAM,WAAY,CAAC,UAAW,CAAC,UAAW,CAAC,+CAAqB,CAAC,YAAa,CAAC,iBAAkB","file":"main.15eb57f7.chunk.css","sourcesContent":[".card{width: 300px;margin: 5px;float: left;background: #edddc778;padding: 10px;border-radius:5px;}"]}
